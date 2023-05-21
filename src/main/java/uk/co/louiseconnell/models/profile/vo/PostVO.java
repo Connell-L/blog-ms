@@ -3,10 +3,7 @@ package uk.co.louiseconnell.models.profile.vo;
 import java.time.Instant;
 
 import io.quarkus.runtime.annotations.RegisterForReflection;
-import jakarta.persistence.Column;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.validation.constraints.NotBlank;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
