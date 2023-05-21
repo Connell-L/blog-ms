@@ -9,7 +9,7 @@ import uk.co.louiseconnell.models.profile.vo.UserVO;
 
 public interface UserService {
 
-  public List<User> findAllUsers();
+  List<User> findAllUsers();
 
   @Transactional
   UserVO addUser(UserVO userVO);
