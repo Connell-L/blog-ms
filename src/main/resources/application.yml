@@ -1,0 +1,48 @@
+quarkus:
+  application:
+    name: blog
+  mp:
+    openapi:
+      extensions:
+        smallrye:
+          info:
+            title: REST APIs for the blog microservice
+            version: 1.0.0
+            description: The microservice responsible for the blog content
+            contact:
+              name: Louise Connell
+              email: louiseconnell77@outlook.com
+  smallrye:
+    config:
+      mapping:
+        validate-unknown: false
+
+# Settings for dev profile (when running mvn quarkus:dev)
+"%dev":
+  quarkus:
+    datasource:
+      db-kind: postgresql
+      username: postgres
+      password: postgres
+      jdbc:
+        url: jdbc:postgresql://localhost:5432/blog
+    hibernate-orm:
+      database:
+        generation: drop-and-create
+    kubernetes-config:
+      enabled: false
+
+# Settings for test profile (when running mvn test)
+"%test":
+  quarkus:
+    datasource:
+      db-kind: postgresql
+      username: postgres
+      password: postgres
+      jdbc:
+        url: jdbc:postgresql://localhost:5432/blog_test
+    hibernate-orm:
+      database:
+        generation: drop-and-create
+    kubernetes-config:
+      enabled: false
